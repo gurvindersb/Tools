@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Trading Tools - Your ultimate resource for trading tools, strategies, and market insights.">
-  <meta name="keywords" content="trading tools, trading strategies, stock market, forex, crypto, trading calculators">
-  <meta name="author" content="Gurvinder Singh">
-  <title>Trading Tools - Master the Market</title>
+  <meta name="description" content="Trading Tools - Your ultimate resource for trading tools, strategies, and market insights. Explore calculators, risk management tools, and more.">
+  <meta name="keywords" content="trading tools, trading strategies, stock market, forex, crypto, trading calculators, risk management, portfolio tracker">
+  <meta name="author" content="Your Name">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.yourwebsite.com">
+  <title>Trading Tools - Master the Market with Advanced Tools and Strategies</title>
   <style>
     /* Global Styles */
     body {
@@ -27,25 +29,90 @@
       color: #3498db;
     }
 
+    /* Header */
+    header {
+      background: #2c3e50;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      margin: 10px 0 0;
+      font-size: 1.2rem;
+    }
+
+    /* Navigation */
+    nav {
+      background: #34495e;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      font-size: 1.1rem;
+    }
+
+    nav a:hover {
+      color: #3498db;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('https://via.placeholder.com/1200x400') no-repeat center center/cover;
+      color: #fff;
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin: 20px 0;
+    }
+
+    .hero .btn {
+      background: #3498db;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 1.1rem;
+    }
+
+    .hero .btn:hover {
+      background: #2980b9;
+    }
+
     /* Tools Section */
-    .tools {
+    .tools, .strategies {
       padding: 40px 20px;
       text-align: center;
     }
 
-    .tools h2 {
+    .tools h2, .strategies h2 {
       font-size: 2rem;
       margin-bottom: 20px;
     }
 
-    .tool-grid {
+    .tool-grid, .strategy-grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
     }
 
-    .tool-card {
+    .tool-card, .strategy-card {
       background: #fff;
       border-radius: 8px;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -60,35 +127,77 @@
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
 
-    .tool-card h3 {
+    .tool-card h3, .strategy-card h3 {
       font-size: 1.5rem;
       margin: 0 0 10px;
     }
 
-    .tool-card p {
+    .tool-card p, .strategy-card p {
       font-size: 1rem;
       color: #666;
     }
 
+    /* Footer */
+    footer {
+      background: #2c3e50;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 40px;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
     /* Responsive Design */
     @media (max-width: 768px) {
-      .tool-grid {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .hero h2 {
+        font-size: 2rem;
+      }
+
+      .tool-grid, .strategy-grid {
         flex-direction: column;
         align-items: center;
       }
 
-      .tool-card {
+      .tool-card, .strategy-card {
         width: 100%;
       }
     }
   </style>
 </head>
 <body>
+  <!-- Header -->
+  <header>
+    <h1>Trading Tools</h1>
+    <p>Your ultimate resource for trading tools, strategies, and market insights.</p>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#tools">Tools</a>
+    <a href="#strategies">Strategies</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Master the Market with Our Tools</h2>
+    <p>Explore a wide range of trading tools and strategies designed to help you succeed in the stock market, forex, and crypto.</p>
+    <a href="#tools" class="btn">Get Started</a>
+  </section>
+
   <!-- Tools Section -->
   <section id="tools" class="tools">
     <h2>Featured Tools</h2>
     <div class="tool-grid">
-      <a href="sta-app.html" class="tool-card">
+      <a href="stock-trading-calculator.html" class="tool-card">
         <h3>Stock Trading Calculator</h3>
         <p>Calculate entry prices, stoploss, targets, and capital requirements for your trades.</p>
       </a>
@@ -102,5 +211,29 @@
       </a>
     </div>
   </section>
+
+  <!-- Strategies Section -->
+  <section id="strategies" class="strategies">
+    <h2>Popular Strategies</h2>
+    <div class="strategy-grid">
+      <div class="strategy-card">
+        <h3>Day Trading</h3>
+        <p>Learn how to capitalize on intraday price movements.</p>
+      </div>
+      <div class="strategy-card">
+        <h3>Swing Trading</h3>
+        <p>Master the art of capturing short- to medium-term gains.</p>
+      </div>
+      <div class="strategy-card">
+        <h3>Long-Term Investing</h3>
+        <p>Build wealth with proven long-term investment strategies.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Trading Tools. All rights reserved.</p>
+  </footer>
 </body>
 </html>
