@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stock Trading Calculator</title>
+  <meta name="description" content="Stock Trading Calculator - Calculate buying and short entry prices, stoploss, targets, and capital requirements for stock trading.">
+  <meta name="keywords" content="stock trading, trading calculator, stock market, trading tools, stoploss, targets, capital requirement">
+  <meta name="author" content="Your Name">
+  <title>Stock Trading Calculator - Optimize Your Trades</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -61,11 +64,38 @@
     .targets {
       margin-left: 20px;
     }
+    .ad-container {
+      margin: 20px 0;
+      text-align: center;
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 15px;
+      }
+      h1 {
+        font-size: 24px;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Stock Trading Calculator</h1>
+
+    <!-- AdSense Ad Unit -->
+    <div class="ad-container">
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_AD_SENSE_ID" crossorigin="anonymous"></script>
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-YOUR_AD_SENSE_ID"
+           data-ad-slot="1234567890"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+
     <label for="openPrice">Today's Open Price:</label>
     <input type="number" id="openPrice" placeholder="Enter today's open price">
 
@@ -90,7 +120,7 @@
         <p>Target 1: <span id="target1Buying"></span></p>
         <p>Target 2: <span id="target2Buying"></span></p>
         <p>Target 3: <span id="target3Buying"></span></p>
-        <p>Target 4: <span id="target4Buying"></span></p>
+        <p>Target 4: <span id="target4Buying">Open till end of day</span></p>
       </div>
       <p><strong>Stoploss (Selling):</strong> <span id="stoplossSelling"></span></p>
       <p><strong>Targets (Selling):</strong></p>
@@ -98,10 +128,24 @@
         <p>Target 1: <span id="target1Selling"></span></p>
         <p>Target 2: <span id="target2Selling"></span></p>
         <p>Target 3: <span id="target3Selling"></span></p>
-        <p>Target 4: <span id="target4Selling"></span></p>
+        <p>Target 4: <span id="target4Selling">Open till end of day</span></p>
       </div>
       <p><strong>Number of Shares:</strong> <span id="numShares"></span></p>
       <p><strong>Capital Required (3X Leverage):</strong> <span id="capitalRequired"></span></p>
+    </div>
+
+    <!-- AdSense Ad Unit -->
+    <div class="ad-container">
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_AD_SENSE_ID" crossorigin="anonymous"></script>
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-YOUR_AD_SENSE_ID"
+           data-ad-slot="0987654321"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
     </div>
   </div>
 
@@ -116,24 +160,24 @@
       // Calculate values
       const range = highPrice - lowPrice;
       const geniusFactor = range * 0.55;
-      const buyingEntry = (openPrice + geniusFactor).toFixed(2); // Rounded to 2 decimal places
-      const shortEntry = (openPrice - geniusFactor).toFixed(2); // Rounded to 2 decimal places
-      const stoplossBuying = (buyingEntry * 0.99).toFixed(2); // Rounded to 2 decimal places
+      const buyingEntry = Math.round(openPrice + geniusFactor).toFixed(2); // Rounded to nearest whole number
+      const shortEntry = Math.round(openPrice - geniusFactor).toFixed(2); // Rounded to nearest whole number
+      const stoplossBuying = Math.round(buyingEntry * 0.99).toFixed(2); // Rounded to nearest whole number
       const targetsBuying = [
-        (buyingEntry * 1.01).toFixed(2),
-        (buyingEntry * 1.02).toFixed(2),
-        (buyingEntry * 1.04).toFixed(2),
-        (buyingEntry * 1.04).toFixed(2)
+        Math.round(buyingEntry * 1.01).toFixed(2), // Rounded to nearest whole number
+        Math.round(buyingEntry * 1.02).toFixed(2), // Rounded to nearest whole number
+        Math.round(buyingEntry * 1.04).toFixed(2), // Rounded to nearest whole number
+        "Open till end of day" // Target 4 for Buying
       ];
-      const stoplossSelling = (shortEntry * 1.01).toFixed(2); // Rounded to 2 decimal places
+      const stoplossSelling = Math.round(shortEntry * 1.01).toFixed(2); // Rounded to nearest whole number
       const targetsSelling = [
-        (shortEntry * 0.99).toFixed(2),
-        (shortEntry * 0.98).toFixed(2),
-        (shortEntry * 0.96).toFixed(2),
-        (shortEntry * 0.96).toFixed(2)
+        Math.round(shortEntry * 0.99).toFixed(2), // Rounded to nearest whole number
+        Math.round(shortEntry * 0.98).toFixed(2), // Rounded to nearest whole number
+        Math.round(shortEntry * 0.96).toFixed(2), // Rounded to nearest whole number
+        "Open till end of day" // Target 4 for Selling
       ];
-      const numShares = (riskAmount / (buyingEntry - stoplossBuying)).toFixed(2); // Rounded to 2 decimal places
-      const capitalRequired = ((numShares * buyingEntry) / 3).toFixed(2); // Rounded to 2 decimal places
+      const numShares = Math.round(riskAmount / (buyingEntry - stoplossBuying)).toFixed(2); // Rounded to nearest whole number
+      const capitalRequired = Math.round((numShares * buyingEntry) / 3).toFixed(2); // Rounded to nearest whole number
 
       // Display results
       document.getElementById('buyingEntry').textContent = buyingEntry;
@@ -142,12 +186,10 @@
       document.getElementById('target1Buying').textContent = targetsBuying[0];
       document.getElementById('target2Buying').textContent = targetsBuying[1];
       document.getElementById('target3Buying').textContent = targetsBuying[2];
-      document.getElementById('target4Buying').textContent = targetsBuying[3];
       document.getElementById('stoplossSelling').textContent = stoplossSelling;
       document.getElementById('target1Selling').textContent = targetsSelling[0];
       document.getElementById('target2Selling').textContent = targetsSelling[1];
       document.getElementById('target3Selling').textContent = targetsSelling[2];
-      document.getElementById('target4Selling').textContent = targetsSelling[3];
       document.getElementById('numShares').textContent = numShares;
       document.getElementById('capitalRequired').textContent = capitalRequired;
     }
